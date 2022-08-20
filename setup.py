@@ -29,7 +29,7 @@ setup(
             'dataclasses; python_version < "3.7"',
             'sentencepiece',
             'protobuf',
-            'bitsandbyte',
+            'bitsandbytes',
             'accelerate'
 
     ],
