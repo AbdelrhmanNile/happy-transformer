@@ -19,10 +19,12 @@ setup(
     url = 'https://github.com/EricFillion/happy-transformer',
     keywords = ['bert', 'roberta', 'xlnet', "transformer", "happy", "HappyTransformer",  "classification",  "nlp", "nlu", "natural", "language", "processing", "understanding"],
 
+    dependency_links = ['https://github.com/huggingface/transformers.git'],
+
     install_requires=[
             'torch>=1.0',
             'tqdm>=4.43',
-            'git+https://github.com/huggingface/transformers.git',
+            'transformers',
             'datasets>=1.6.0',
             'dataclasses; python_version < "3.7"',
             'sentencepiece',
