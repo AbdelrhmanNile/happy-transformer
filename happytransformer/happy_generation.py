@@ -45,12 +45,15 @@ class HappyGeneration(HappyTransformer):
     other classes.
     """
     def __init__(self, model_type: str = "GPT2", model_name: str = "gpt2", 
-                 load_path: str = "", use_auth_token: str = None):
+                 load_path: str = "", use_auth_token: str = None, load_in_8bit: bool = False,
+                 int8_threshold: float = 6.0):
 
         self.adaptor = get_adaptor(model_type)
 
         if load_path != "":
             model = AutoModelForCausalLM.from_pretrained(load_path)
+        elif load_in_8bit:
+            model = AutoModelForCausalLM.from_pretrained(model_name, device_map="auto", load_in_8bit=True, int8_threshold=int8_threshold)
         else:
             model = AutoModelForCausalLM.from_pretrained(model_name, use_auth_token=use_auth_token)
 

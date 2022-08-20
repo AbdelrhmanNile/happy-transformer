@@ -22,11 +22,13 @@ setup(
     install_requires=[
             'torch>=1.0',
             'tqdm>=4.43',
-            'transformers>=4.4.0',
+            'git+https://github.com/huggingface/transformers.git',
             'datasets>=1.6.0',
             'dataclasses; python_version < "3.7"',
             'sentencepiece',
-            'protobuf'
+            'protobuf',
+            'bitsandbyte',
+            'accelerate'
 
     ],
     classifiers=[
